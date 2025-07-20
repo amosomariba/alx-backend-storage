@@ -38,7 +38,10 @@ def replay(method: Callable):
 
     print(f"{key} was called {len(inputs)} times:")
     for input_args, output in zip(inputs, outputs):
-        print(f"{key}(*{input_args.decode()}) -> {output.decode()}")
+        args_str = input_args.decode()
+        result_str = output.decode()
+        print(f"{key}(*{args_str}) -> {result_str}")
+
 
 
 class Cache:
